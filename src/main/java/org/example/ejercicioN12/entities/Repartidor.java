@@ -11,13 +11,20 @@ public class Repartidor extends Empleado {
     }
 
     @Override
+    public double getSalario() {
+        double nuevoSalario = super.getSalario();
+
+        if (plus()) {
+            nuevoSalario = super.getSalario() + super.PLUS;
+            setSalario(nuevoSalario);
+        }
+        return nuevoSalario;
+    }
+
+    @Override
     public boolean plus() {
         boolean bandera;
         bandera = getEdad() < 25 && getZona().equals("zona 3");
-        double nuevoPlus = super.getSalario() + super.PLUS;
-        if (bandera){
-            setSalario(nuevoPlus);
-        }
         return bandera;
     }
 
