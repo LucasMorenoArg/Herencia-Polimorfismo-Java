@@ -1,6 +1,9 @@
 package org.example.ejercicioN12.entities;
 
 
+import lombok.Getter;
+
+@Getter
 public class Repartidor extends Empleado {
 
     private String zona;
@@ -26,10 +29,6 @@ public class Repartidor extends Empleado {
         boolean bandera;
         bandera = getEdad() < 25 && getZona().equals("zona 3");
         return bandera;
-    }
-
-    public String getZona() {
-        return zona;
     }
 
     public void setZona(String zona) {
